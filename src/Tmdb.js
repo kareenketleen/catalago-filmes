@@ -7,6 +7,8 @@ const basicFetch = async (endpoint) => {
   return json;
 };
 
+/* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
+
 export default {
   getHomeList: async () => {
     return [
@@ -14,7 +16,7 @@ export default {
         slug: "originals",
         title: "Originais do Netflix",
         items: await basicFetch(
-          `/discover/tv?with_network=123&language=pt-BRapi_key=${API_KEY}`
+          `/discover/tv?with_network=213&language=pt-BRapi_key=${API_KEY}`
         ),
       },
       {
