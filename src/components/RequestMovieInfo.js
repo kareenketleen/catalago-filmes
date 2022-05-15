@@ -1,23 +1,49 @@
 import "./RequestMovieInfo.css";
-import { useState } from "react";
+import axios from "axios";
+
+const API_BASE = "http://localhost:3333/movies";
 
 const RequestMovieInfo = () => {
-  const [blobFile, setBlobFile] = useState(null);
+  let formData = new FormData();
+
+  const readFile = (e) => {
+    if (e.target && e.target.files[0]) {
+      formData.append("image", e.target.files[0], e.target.files[0].name);
+    }
+  };
 
   function handleSubmit() {
+    const inputAuthor = document.getElementById("author");
     const inputTitle = document.getElementById("title");
     const taDescription = document.getElementById("description");
 
-    const request = {
-      title: inputTitle.value,
-      description: taDescription.value,
-      cover: blobFile,
-    };
+    formData.append("author", inputAuthor.value);
+    formData.append("title", inputTitle.value);
+    formData.append("description", taDescription.value);
+
+    axios
+      .post(API_BASE, formData, {
+        headers: {
+          "content-type": "multipart/form-data",
+        },
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   return (
     <div className="container">
       <form>
+        <div>
+          <label>
+            Autor do Upload:
+            <input id="author" />
+          </label>
+        </div>
         <div>
           <label>
             Título Do Filme:
@@ -37,20 +63,7 @@ const RequestMovieInfo = () => {
               type="file"
               accept="image/png, image/jpg"
               id="cover"
-              onChange={(e) => {
-                let reader = new FileReader();
-
-                reader.readAsDataURL(e.target.files[0]);
-
-                reader.onload = function () {
-                  //console.log(reader.result);
-                  setBlobFile(reader.result);
-                };
-
-                reader.onerror = function () {
-                  setBlobFile("No image");
-                };
-              }}
+              onChange={readFile}
             />
           </label>
         </div>
