@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./Header.css";
 import AddToPhotosIcon from "@material-ui/icons/AddToPhotos";
 import HomeIcon from "@material-ui/icons/Home";
@@ -8,14 +10,14 @@ export default () => {
   return (
     <header className="black">
       <div className="header--logo">
-        <a href="/">
+        <Link to="/">
           <HomeIcon style={{ fontSize: 40 }} />
-        </a>
+        </Link>
       </div>
       <div className="header--item">
-        <a href="/">
+        <Link to="/cadastro">
           <AddToPhotosIcon style={{ fontSize: 40 }} />
-        </a>
+        </Link>
       </div>
     </header>
   );
