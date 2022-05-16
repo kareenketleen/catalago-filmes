@@ -29,17 +29,17 @@ export default () => {
   }, []);
 
   return (
-    <div>
+    <div id="description">
       <Header />
       <section>
         <div className="container" style={{ height: 100 }}></div>
       </section>
 
-      <div key="1">
+      <div key={movie.id}>
         <h1>{movie.title}</h1>
         <br></br>
         <img src={movie.image_url} alt=""></img>
-        <p>{movie.description}</p>
+        <div className="description">{movie.description}</div>
       </div>
     </div>
   );
