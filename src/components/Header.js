@@ -10,12 +10,12 @@ export default () => {
   return (
     <header className="black">
       <div className="header--logo">
-        <Link to="/">
+        <Link id="link-home" to="/">
           <HomeIcon style={{ fontSize: 40 }} />
         </Link>
       </div>
       <div className="header--item">
-        <Link to="/cadastro">
+        <Link id="link-cadastro" to="/cadastro">
           <AddToPhotosIcon style={{ fontSize: 40 }} />
         </Link>
       </div>

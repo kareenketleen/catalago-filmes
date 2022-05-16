@@ -31,15 +31,17 @@ export default () => {
   return (
     <div id="description">
       <Header />
+
       <section>
         <div className="container" style={{ height: 100 }}></div>
       </section>
 
-      <div key={movie.id}>
-        <h1>{movie.title}</h1>
+      <h1 id="title-description">{movie.title}</h1>
+      <div id="content" key={movie.id}>
         <br></br>
-        <img src={movie.image_url} alt=""></img>
-        <div className="description">{movie.description}</div>
+        <img id="img-description" src={movie.image_url} alt=""></img>
+
+        <p id="movie-description">{movie.description}</p>
       </div>
     </div>
   );

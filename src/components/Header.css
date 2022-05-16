@@ -1,4 +1,4 @@
-header {
+.black {
   position: fixed;
   z-index: 999;
   top: 0;
@@ -11,17 +11,26 @@ header {
   padding: 0 30px;
   background: transparent;
   transition: all ease 0.5s;
-}
-header.black {
   background-color: #141414;
 }
 
 .header--logo {
   height: 25px;
+  color: white;
 }
+
 .header--logo img {
   height: 100%;
 }
+
+#link-home {
+  color: white;
+}
+
+#link-cadastro {
+  color: white;
+}
+
 .header--item {
   height: 35px;
 }

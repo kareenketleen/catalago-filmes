@@ -36,42 +36,44 @@ const RequestMovieInfo = () => {
   }
 
   return (
-    <div className="container">
+    <div id="body-cadastro">
+      <h2 id="cadastro-filme">Cadastrando um Filme</h2>
       <form>
-        <div>
+        <div id="label-author">
           <label>
-            Autor do Upload:
-            <input id="author" />
+            Autor:
+            <input id="author" required type="text" />
           </label>
         </div>
-        <div>
+        <div id="label-title">
           <label>
-            Título Do Filme:
-            <input id="title" />
+            Título:
+            <input id="title" required type="text" />
           </label>
         </div>
-        <div>
+        <div id="label-description">
           <label>
-            Descrição Do Filme:
-            <textarea id="description" />
+            Descrição:
+            <textarea id="description-textarea" required />
           </label>
         </div>
-        <div>
+        <div id="label-poster-filme">
           <label>
-            Pôster Do Filme:
+            Selecione o pôster do filme:
             <input
+              id="poster-filme"
               type="file"
+              required
               accept="image/png, image/jpg"
-              id="cover"
               onChange={readFile}
             />
           </label>
         </div>
-        <div>
-          <button id="submit" onClick={handleSubmit}>
+        <div id="buttons">
+          <button id="btn-postar" onClick={handleSubmit}>
             Postar
           </button>
-          <button id="cancel">Cancelar</button>
+          <button id="btn-cancel">Cancelar</button>
         </div>
       </form>
     </div>
