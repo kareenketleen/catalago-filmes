@@ -1,12 +1,12 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./MovieRow.css";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 
-/* eslint import/no-anonymous-default-export: [2, {"allowArrowFunction": true}] */
-
-export default ({ title, items }) => {
+const MovieRow = ({ title, items }) => {
   const [scrollX, setScrollX] = useState(-400);
+
   const handleLeftArrow = () => {
     let x = scrollX + Math.round(window.innerWidth / 2);
     if (x > 0) {
@@ -43,7 +43,9 @@ export default ({ title, items }) => {
           {items.length > 0 &&
             items.map((item, key) => (
               <div key={key} className="movieRow--item">
-                <img src={item.image_url} alt={item.title} />
+                <Link to={"/description/" + item.id}>
+                  <img src={item.image_url} alt={item.title} />
+                </Link>
               </div>
             ))}
         </div>
@@ -51,3 +53,5 @@ export default ({ title, items }) => {
     </div>
   );
 };
+
+export default MovieRow;
