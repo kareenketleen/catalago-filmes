@@ -2,6 +2,16 @@
 
 #
 
+Para executar o projeto localmente:
+
+```
+Arquivo: /src/services/api.js ->
+    Modificar a linha 4 (baseURL):
+    baseURL: "http://localhost:3333"
+
+Na raíz: yarn start
+```
+
 ```
 Front Vercel : https://catalago-filmes.vercel.app/
 ```
