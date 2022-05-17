@@ -1,0 +1,105 @@
+.container-post {
+  margin: 0 0 20px;
+  font-size: 50px;
+  color: #999;
+  text-shadow: 1px 1px 1px white;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form-container form {
+  width: 500px;
+}
+
+.movie-image .movie-image-title {
+  width: 150px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-right: 30px;
+}
+
+.movie-image .border {
+  border: 1px dashed #fff;
+  border-radius: 5px;
+}
+
+.movie-image .movie-title-label {
+  cursor: pointer;
+}
+
+#movie-image-file {
+  display: none;
+}
+
+form .input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  margin: 5px;
+}
+
+.input-group input,
+textarea {
+  height: 40px;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  padding: 5px;
+  outline: unset;
+}
+
+.input-group textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+form .actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+form .actions button {
+  border: 0;
+  background: #59ffa3;
+  color: #000000;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: 0.2s all ease;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+form .actions a {
+  text-decoration: none;
+  background: #ff3434;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: 0.2s all ease;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+form .actions button:hover {
+  background: #83ffba;
+  box-shadow: 0 0 3px 1px #83ffba;
+}
+
+form .actions a:hover {
+  background: #ff1616;
+  box-shadow: 0 0 3px 1px #ff9a9a;
+}

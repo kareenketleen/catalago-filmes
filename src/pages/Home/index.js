@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 
-import MovieRow from "../components/MovieRow";
-import Header from "../components/Header";
+import MovieRow from "../../components/MovieRow";
+import Header from "../../components/Header";
 
-import Tmdb from "../Tmdb";
+import api from "../../services/api";
 
 const Home = () => {
   const [movieList, setMovieList] = useState([]);
 
   useEffect(() => {
     const loadAll = async () => {
-      let list = await Tmdb.getHomeList();
-      setMovieList(list);
+      let { data } = await api.get("/movies");
+      setMovieList(data);
     };
 
     loadAll();
@@ -20,12 +20,10 @@ const Home = () => {
     <div className="page">
       <Header />
       <section>
-        <div className="container" style={{ height: 100 }}></div>
+        <div className="container" style={{ height: 100 }} />
       </section>
       <section className="lists">
-        {movieList.map((item, _key) => (
-          <MovieRow key={_key} title={item.title} items={item.items} />
-        ))}
+        <MovieRow title="Últimos filmes adicionados" items={movieList} />
       </section>
     </div>
   );

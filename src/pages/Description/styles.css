@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,300&display=swap");
 
-#content {
+.content {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 40px;
 }
-#title-description {
+
+.title-description {
   font-family: "Roboto", sans-serif;
   font-size: 50px;
   text-align: left;
@@ -17,13 +18,13 @@
   text-shadow: 1px 1px 1px white;
 }
 
-#img-description {
+.img-description {
   width: 600px;
   height: 750px;
   padding: 30px;
 }
 
-#movie-description {
+.movie-description {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   margin: 40px;
@@ -34,19 +35,19 @@
 }
 
 @media (max-width: 760px) {
-  #description > * {
+  .description > * {
     text-align: center;
     margin-top: 10px;
     max-width: 70%;
     flex-wrap: wrap;
   }
-  #movie-description {
+  .movie-description {
     font-size: 25px;
     max-width: 100%;
     margin-left: 10px;
   }
 
-  #img-description {
+  .img-description {
     height: 400px;
     width: 300px;
     margin-left: 0px;
